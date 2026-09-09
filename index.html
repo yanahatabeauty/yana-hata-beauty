@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="images%202/social-preview.jpg">
 
 <!-- Favicon (monogram, no file needed) -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23a8562c'/%3E%3Cg transform='translate(32,40)' fill='none' stroke='%23faf6ee' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M0,0 C -5,-22 -19,-30 -32,-28 C -25,-13 -12,-3 0,0 Z'/%3E%3Cpath d='M0,0 C 5,-22 19,-30 32,-28 C 25,-13 12,-3 0,0 Z'/%3E%3Cpath d='M0,0 C -2,-25 -2,-38 0,-46 C 2,-38 2,-25 0,0 Z'/%3E%3Cpath d='M-38,8 C -16,22 16,22 38,8 C 34,18 18,26 0,26 C -18,26 -34,18 -38,8 Z'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23a8562c'/%3E%3Cg transform='translate(32,41) scale(0.75)' fill='none' stroke='%23faf6ee' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M0,0 C -5,-22 -19,-30 -32,-28 C -25,-13 -12,-3 0,0 Z'/%3E%3Cpath d='M0,0 C 5,-22 19,-30 32,-28 C 25,-13 12,-3 0,0 Z'/%3E%3Cpath d='M0,0 C -2,-25 -2,-38 0,-46 C 2,-38 2,-25 0,0 Z'/%3E%3Cpath d='M-38,8 C -16,22 16,22 38,8 C 34,18 18,26 0,26 C -18,26 -34,18 -38,8 Z'/%3E%3C/g%3E%3C/svg%3E">
 
 <!-- Local business structured data -->
 <script type="application/ld+json">
@@ -229,33 +229,27 @@
 
   /* ---------- services ---------- */
   .services{background:var(--paper);}
-  .service-list{border-top:1px solid var(--line);}
-  .service-row{
-    display:grid; grid-template-columns:1fr auto; gap:12px 24px;
-    align-items:baseline; padding:28px 0; border-bottom:1px solid var(--line);
-    transition:padding-left .3s ease;
+  .service-grid{display:grid; grid-template-columns:1fr; gap:32px;}
+  @media(min-width:700px){ .service-grid{grid-template-columns:repeat(3,1fr);} }
+  .service-card{display:flex; flex-direction:column;}
+  .service-photo{
+    aspect-ratio:4/3; border-radius:2px; overflow:hidden; position:relative; margin-bottom:18px;
+    background:linear-gradient(150deg, var(--clay) 0%, var(--clay-deep) 100%);
   }
-  .service-row:hover{padding-left:10px;}
-  .service-name{font-family:'Fraunces',serif; font-size:1.5rem;}
+  .service-photo img{width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease, transform .5s ease;}
+  .service-photo img.loaded{opacity:1;}
+  .service-card:hover .service-photo img.loaded{transform:scale(1.04);}
+  .service-index{
+    font-size:0.8rem; color:rgba(34,29,22,0.4); margin-right:10px; font-variant-numeric:tabular-nums;
+  }
+  .service-name{font-family:'Fraunces',serif; font-size:1.4rem;}
   .service-desc{
-    grid-column:1/2; font-size:0.96rem; color:rgba(34,29,22,0.68); max-width:52ch; margin-top:6px;
+    font-size:0.96rem; color:rgba(34,29,22,0.68); margin-top:10px; max-width:40ch;
   }
   .service-price{
     font-family:'Karla',sans-serif; font-size:0.95rem; font-weight:600; color:var(--clay-deep);
-    white-space:nowrap;
+    margin-top:14px; padding-top:14px; border-top:1px solid var(--line);
   }
-  .service-index{
-    font-size:0.8rem; color:rgba(34,29,22,0.4); margin-right:14px; font-variant-numeric:tabular-nums;
-  }
-  .service-thumb{
-    width:64px; height:64px; border-radius:2px; overflow:hidden; position:relative; flex-shrink:0;
-    background:linear-gradient(150deg, var(--clay) 0%, var(--clay-deep) 100%);
-  }
-  .service-thumb img{width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease;}
-  .service-thumb img.loaded{opacity:1;}
-  .service-row{align-items:center;}
-  .service-row .service-main{display:flex; align-items:center; gap:18px;}
-  .service-row .service-text{flex:1;}
 
   /* ---------- gallery ---------- */
   .gallery{background:var(--cream);}
@@ -359,8 +353,8 @@
 <header>
   <div class="nav">
     <div class="brand">
-      <svg viewBox="0 0 76 66" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="color:var(--clay-deep)">
-        <g transform="translate(38,44)">
+      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="color:var(--clay-deep)">
+        <g transform="translate(50,64)">
           <path d="M0,0 C -6,-26 -22,-36 -38,-34 C -30,-16 -14,-4 0,0 Z"/>
           <path d="M0,0 C 6,-26 22,-36 38,-34 C 30,-16 14,-4 0,0 Z"/>
           <path d="M0,0 C -3,-30 -3,-46 0,-56 C 3,-46 3,-30 0,0 Z"/>
@@ -437,35 +431,23 @@
       <span class="eyebrow" style="color:var(--clay-deep);">Treatments</span>
       <h2>Every session is built around what your skin and body need that day.</h2>
     </div>
-    <div class="service-list">
-      <div class="service-row reveal">
-        <div class="service-main">
-          <div class="service-thumb"><img src="images%202/service-1.jpg" alt="Skin Hydration treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
-          <div class="service-text">
-            <span class="service-index">01</span><span class="service-name">Skin Hydration</span>
-            <div class="service-desc">A restorative facial focused on deep moisture and barrier repair, leaving skin soft, calm, and visibly replenished.</div>
-          </div>
-        </div>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images%202/service-1.jpg" alt="Skin Hydration treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+        <span class="service-index">01</span><span class="service-name">Skin Hydration</span>
+        <div class="service-desc">A restorative facial focused on deep moisture and barrier repair, leaving skin soft, calm, and visibly replenished.</div>
         <div class="service-price">$150 / session</div>
       </div>
-      <div class="service-row reveal">
-        <div class="service-main">
-          <div class="service-thumb"><img src="images%202/service-2.jpg" alt="Sculpt and Lift treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
-          <div class="service-text">
-            <span class="service-index">02</span><span class="service-name">Sculpt &amp; Lift</span>
-            <div class="service-desc">Facial massage and contouring techniques that lift, define, and encourage circulation for a firmer, more awake look.</div>
-          </div>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images%202/service-2.jpg" alt="Sculpt and Lift treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+        <span class="service-index">02</span><span class="service-name">Sculpt &amp; Lift</span>
+        <div class="service-desc">Facial massage and contouring techniques that lift, define, and encourage circulation for a firmer, more awake look.</div>
         <div class="service-price">$150 / session</div>
       </div>
-      <div class="service-row reveal">
-        <div class="service-main">
-          <div class="service-thumb"><img src="images%202/service-3.jpg" alt="Tension Release treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
-          <div class="service-text">
-            <span class="service-index">03</span><span class="service-name">Tension Release</span>
-            <div class="service-desc">A slower, somatic session that works through held tension in the face and jaw, pairing touch with breath and stillness.</div>
-          </div>
-        </div>
+      <div class="service-card reveal">
+        <div class="service-photo"><img src="images%202/service-3.jpg" alt="Tension Release treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+        <span class="service-index">03</span><span class="service-name">Tension Release</span>
+        <div class="service-desc">A slower, somatic session that works through held tension in the face and jaw, pairing touch with breath and stillness.</div>
         <div class="service-price">$150 / session</div>
       </div>
     </div>
@@ -578,7 +560,6 @@
 <footer>
   <div class="wrap footer-row">
     <span>© <span id="year"></span> Yanahata Beauty</span>
-    <span>Site by request · not affiliated with Canva</span>
   </div>
 </footer>
 
