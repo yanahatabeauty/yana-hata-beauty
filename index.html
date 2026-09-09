@@ -4,7 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yanahata Beauty — A Softer Approach to Beauty</title>
-<meta name="description" content="Licensed esthetician Yana Hata offers skin hydration, sculpt & lift, and tension release treatments designed to restore skin and nervous system alike.">
+<meta name="description" content="Licensed esthetician Yana Hata offers Skin Hydration, Sculpt & Lift, and Tension Release facial treatments designed to restore skin and nervous system alike. Book online.">
+<link rel="canonical" href="https://yanahatabeauty.github.io/yana-hata-beauty/">
+
+<!-- Social preview (Facebook, iMessage, etc) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yanahata Beauty — A Softer Approach to Beauty">
+<meta property="og:description" content="Licensed esthetician offering Skin Hydration, Sculpt & Lift, and Tension Release treatments. Book an appointment.">
+<meta property="og:image" content="images/social-preview.jpg">
+<meta property="og:url" content="https://yanahatabeauty.github.io/yana-hata-beauty/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Yanahata Beauty — A Softer Approach to Beauty">
+<meta name="twitter:description" content="Licensed esthetician offering Skin Hydration, Sculpt & Lift, and Tension Release treatments.">
+<meta name="twitter:image" content="images/social-preview.jpg">
+
+<!-- Favicon (monogram, no file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23a8562c'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='34' fill='%23faf6ee' text-anchor='middle'%3EY%3C/text%3E%3C/svg%3E">
+
+<!-- Local business structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Yanahata Beauty",
+  "description": "Licensed esthetician offering skin hydration, sculpt & lift, and tension release facial treatments.",
+  "telephone": "+1-508-361-6940",
+  "email": "yanahatabeauty@gmail.com",
+  "priceRange": "$150",
+  "url": "https://yanahatabeauty.github.io/yana-hata-beauty/"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..600,0..1&family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
@@ -146,6 +176,8 @@
       radial-gradient(circle at 72% 68%, rgba(127,63,33,0.65), transparent 60%),
       linear-gradient(160deg, var(--clay) 0%, var(--clay-deep) 100%);
   }
+  .ph-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .6s ease;}
+  .ph-img.loaded{opacity:1;}
   .hero-art::before{
     content:''; position:absolute; inset:0;
     background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
@@ -181,10 +213,6 @@
     background:linear-gradient(150deg, #d9c9ab 0%, var(--clay) 55%, var(--clay-deep) 100%);
     position:relative; overflow:hidden;
   }
-  .about-portrait::after{
-    content:'Yana Hata'; position:absolute; left:20px; bottom:20px;
-    font-family:'Fraunces',serif; font-style:italic; color:var(--paper); font-size:1.1rem; opacity:0.92;
-  }
   .about-copy p{margin:0 0 20px; font-size:1.02rem; color:rgba(34,29,22,0.82); max-width:60ch;}
   .about-copy p:last-of-type{margin-bottom:0;}
   .about-copy .credential{
@@ -217,6 +245,33 @@
   .service-index{
     font-size:0.8rem; color:rgba(34,29,22,0.4); margin-right:14px; font-variant-numeric:tabular-nums;
   }
+  .service-thumb{
+    width:64px; height:64px; border-radius:2px; overflow:hidden; position:relative; flex-shrink:0;
+    background:linear-gradient(150deg, var(--clay) 0%, var(--clay-deep) 100%);
+  }
+  .service-thumb img{width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease;}
+  .service-thumb img.loaded{opacity:1;}
+  .service-row{align-items:center;}
+  .service-row .service-main{display:flex; align-items:center; gap:18px;}
+  .service-row .service-text{flex:1;}
+
+  /* ---------- gallery ---------- */
+  .gallery{background:var(--cream);}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:12px;
+  }
+  @media(min-width:640px){ .gallery-grid{grid-template-columns:repeat(3,1fr);} }
+  .gallery-item{
+    aspect-ratio:1; border-radius:2px; overflow:hidden; position:relative;
+    background:linear-gradient(150deg, #d9c9ab 0%, var(--clay) 60%, var(--clay-deep) 100%);
+  }
+  .gallery-item:nth-child(2n){background:linear-gradient(150deg, var(--clay-deep) 0%, var(--moss) 100%);}
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover; opacity:0;
+    transition:opacity .6s ease, transform .5s ease;
+  }
+  .gallery-item img.loaded{opacity:1;}
+  .gallery-item:hover img.loaded{transform:scale(1.05);}
 
   /* ---------- testimonials ---------- */
   .testimonials{background:var(--ink); color:var(--paper);}
@@ -304,6 +359,7 @@
     <div class="brand">Yanahata Beauty</div>
     <ul class="navlinks">
       <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -315,6 +371,7 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
     <a href="#about">About</a>
     <a href="#reviews">Reviews</a>
     <a href="#contact">Contact</a>
@@ -335,6 +392,7 @@
       <p class="hero-note">By appointment · (508) 361-6940</p>
     </div>
     <div class="hero-art reveal">
+      <img class="ph-img" src="images/hero.jpg" alt="Yanahata Beauty treatment room" onload="this.classList.add('loaded')" onerror="this.remove()">
       <div class="ring r1"></div>
       <div class="ring r2"></div>
       <span class="label">Est. skincare &amp; touch therapy</span>
@@ -344,7 +402,9 @@
 
 <section class="about" id="about">
   <div class="wrap about-grid">
-    <div class="about-portrait reveal"></div>
+    <div class="about-portrait reveal">
+      <img class="ph-img" src="images/about.jpg" alt="Yana Hata, licensed esthetician" onload="this.classList.add('loaded')" onerror="this.remove()">
+    </div>
     <div class="about-copy">
       <span class="credential">Licensed esthetician · 6+ years</span>
       <h2 style="margin-bottom:22px;">About Yana</h2>
@@ -365,26 +425,52 @@
     </div>
     <div class="service-list">
       <div class="service-row reveal">
-        <div>
-          <span class="service-index">01</span><span class="service-name">Skin Hydration</span>
-          <div class="service-desc">A restorative facial focused on deep moisture and barrier repair, leaving skin soft, calm, and visibly replenished.</div>
+        <div class="service-main">
+          <div class="service-thumb"><img src="images/service-1.jpg" alt="Skin Hydration treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+          <div class="service-text">
+            <span class="service-index">01</span><span class="service-name">Skin Hydration</span>
+            <div class="service-desc">A restorative facial focused on deep moisture and barrier repair, leaving skin soft, calm, and visibly replenished.</div>
+          </div>
         </div>
         <div class="service-price">$150 / session</div>
       </div>
       <div class="service-row reveal">
-        <div>
-          <span class="service-index">02</span><span class="service-name">Sculpt &amp; Lift</span>
-          <div class="service-desc">Facial massage and contouring techniques that lift, define, and encourage circulation for a firmer, more awake look.</div>
+        <div class="service-main">
+          <div class="service-thumb"><img src="images/service-2.jpg" alt="Sculpt and Lift treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+          <div class="service-text">
+            <span class="service-index">02</span><span class="service-name">Sculpt &amp; Lift</span>
+            <div class="service-desc">Facial massage and contouring techniques that lift, define, and encourage circulation for a firmer, more awake look.</div>
+          </div>
         </div>
         <div class="service-price">$150 / session</div>
       </div>
       <div class="service-row reveal">
-        <div>
-          <span class="service-index">03</span><span class="service-name">Tension Release</span>
-          <div class="service-desc">A slower, somatic session that works through held tension in the face and jaw, pairing touch with breath and stillness.</div>
+        <div class="service-main">
+          <div class="service-thumb"><img src="images/service-3.jpg" alt="Tension Release treatment" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+          <div class="service-text">
+            <span class="service-index">03</span><span class="service-name">Tension Release</span>
+            <div class="service-desc">A slower, somatic session that works through held tension in the face and jaw, pairing touch with breath and stillness.</div>
+          </div>
         </div>
         <div class="service-price">$150 / session</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--clay-deep);">Gallery</span>
+      <h2>A look inside the practice.</h2>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="images/gallery-1.jpg" alt="Yanahata Beauty gallery photo 1" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="gallery-item reveal"><img src="images/gallery-2.jpg" alt="Yanahata Beauty gallery photo 2" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="gallery-item reveal"><img src="images/gallery-3.jpg" alt="Yanahata Beauty gallery photo 3" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="gallery-item reveal"><img src="images/gallery-4.jpg" alt="Yanahata Beauty gallery photo 4" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="gallery-item reveal"><img src="images/gallery-5.jpg" alt="Yanahata Beauty gallery photo 5" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
+      <div class="gallery-item reveal"><img src="images/gallery-6.jpg" alt="Yanahata Beauty gallery photo 6" onload="this.classList.add('loaded')" onerror="this.remove()"></div>
     </div>
   </div>
 </section>
