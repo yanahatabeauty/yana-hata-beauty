@@ -223,8 +223,17 @@
     background:linear-gradient(150deg, #d9c9ab 0%, var(--clay) 55%, var(--clay-deep) 100%);
     position:relative; overflow:hidden;
   }
+  .about-extra{
+    display:none; margin-top:20px; padding:20px; border:1px solid var(--line);
+    border-radius:2px; background:var(--paper);
+  }
+  .about-extra .quote{
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem;
+    color:var(--ink); margin:0 0 10px; line-height:1.35;
+  }
+  .about-extra .attribution{font-size:0.8rem; letter-spacing:0.04em; color:rgba(34,29,22,0.55); text-transform:uppercase;}
   @media(min-width:860px){
-    .about-portrait{aspect-ratio:auto; height:100%; min-height:560px;}
+    .about-extra{display:block;}
   }
   .about-copy p{margin:0 0 20px; font-size:1.02rem; color:rgba(34,29,22,0.82); max-width:60ch;}
   .about-copy p:last-of-type{margin-bottom:0;}
@@ -440,8 +449,14 @@
 
 <section class="about" id="about">
   <div class="wrap about-grid">
-    <div class="about-portrait reveal">
-      <img class="ph-img" src="images%202/about.jpg" alt="Yana Hata, licensed esthetician" onload="this.classList.add('loaded')" onerror="this.remove()">
+    <div>
+      <div class="about-portrait reveal">
+        <img class="ph-img" src="images%202/about.jpg" alt="Yana Hata, licensed esthetician" onload="this.classList.add('loaded')" onerror="this.remove()">
+      </div>
+      <div class="about-extra">
+        <p class="quote">"Her touch is gentle and intentional, and it felt like she was guiding my skin and my nervous system back into balance."</p>
+        <span class="attribution">Jeffery Sweet, Client</span>
+      </div>
     </div>
     <div class="about-copy">
       <span class="credential">Licensed esthetician · 6+ years</span>
@@ -453,7 +468,7 @@
       <div class="credentials-list">
         <span class="credentials-label">Training &amp; Credentials</span>
         <ul>
-          <li>Licensed Esthetician — Atelier Esthétique Institute of Esthetics, NYC (600-hour&nbsp;program)</li>
+          <li>Licensed Esthetician —<br>Atelier Esthétique Institute of Esthetics, NYC (600-hour program)</li>
           <li>Advanced Facial Massage Certification</li>
           <li>Reiki Level II Certification</li>
           <li>NASM Certified Personal Trainer</li>
