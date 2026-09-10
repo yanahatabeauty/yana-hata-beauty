@@ -232,6 +232,19 @@
     font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.35rem;
     margin-bottom:20px; max-width:22ch; color:var(--ink);
   }
+  .credentials-list{margin:28px 0; padding-top:20px; border-top:1px solid var(--line);}
+  .credentials-label{
+    display:block; font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--clay-deep); font-weight:600; margin-bottom:12px;
+  }
+  .credentials-list ul{margin:0; padding:0; list-style:none;}
+  .credentials-list li{
+    font-size:0.92rem; color:rgba(34,29,22,0.72); padding:5px 0 5px 16px; position:relative;
+  }
+  .credentials-list li::before{
+    content:''; position:absolute; left:0; top:12px; width:5px; height:5px; border-radius:50%;
+    background:var(--clay);
+  }
 
   /* ---------- services ---------- */
   .services{background:var(--paper);}
@@ -432,6 +445,15 @@
       <p>I'm Yana, a licensed esthetician with over six years of experience in skincare, facial massage, and wellness. My work has taken me through spas, advanced skincare practices, and holistic wellness spaces, where I discovered what I love most: the relationship between the skin, the body, our emotions, and the way we experience ourselves.</p>
       <p>I believe that caring for your skin can be a ritual rather than another task on your list. A chance to slow down. To breathe. To soften your face, your body, and perhaps even the way you speak to yourself.</p>
       <p>My treatments are designed to leave you with more than glowing skin. I want you to leave feeling present, restored, and a little more at home in yourself.</p>
+      <div class="credentials-list">
+        <span class="credentials-label">Training &amp; Credentials</span>
+        <ul>
+          <li>Licensed Esthetician — Atelier Esthétique Institute of Esthetics, NYC (600-hour program)</li>
+          <li>Advanced Facial Massage Certification</li>
+          <li>Reiki Level II Certification</li>
+          <li>NASM Certified Personal Trainer</li>
+        </ul>
+      </div>
       <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--clay-deep);">Come as you are. We'll start there.</p>
     </div>
   </div>
