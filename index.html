@@ -215,7 +215,10 @@
   /* ---------- philosophy / about ---------- */
   .about{background:var(--cream);}
   .about-grid{display:grid; grid-template-columns:1fr; gap:48px;}
-  @media(min-width:860px){ .about-grid{grid-template-columns:0.8fr 1.2fr; gap:72px;} }
+  @media(min-width:860px){
+    .about-grid{grid-template-columns:0.8fr 1.2fr; gap:72px; align-items:start;}
+    .about-portrait{position:sticky; top:100px;}
+  }
   .about-portrait{
     aspect-ratio:3/4; border-radius:2px;
     background:linear-gradient(150deg, #d9c9ab 0%, var(--clay) 55%, var(--clay-deep) 100%);
@@ -232,7 +235,7 @@
     font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.35rem;
     margin-bottom:20px; max-width:22ch; color:var(--ink);
   }
-  .credentials-list{margin:28px 0; padding-top:20px; border-top:1px solid var(--line);}
+  .credentials-list{margin:28px 0; padding-top:20px; border-top:1px solid rgba(168,86,44,0.3);}
   .credentials-label{
     display:block; font-size:0.76rem; letter-spacing:0.1em; text-transform:uppercase;
     color:var(--clay-deep); font-weight:600; margin-bottom:12px;
