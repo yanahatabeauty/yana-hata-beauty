@@ -276,20 +276,22 @@
   .gallery-item:hover img.loaded{transform:scale(1.05);}
 
   /* ---------- testimonials ---------- */
-  .testimonials{background:var(--ink); color:var(--paper);}
+  .testimonials{background:var(--ink); color:var(--paper); text-align:center;}
+  .testimonials .section-head{margin-left:auto; margin-right:auto;}
   .testimonials .section-head h2{color:var(--paper);}
-  .quote-stage{position:relative; min-height:260px;}
+  .quote-stage{position:relative; min-height:260px; display:flex; flex-direction:column; align-items:center;}
   .quote{
     position:absolute; inset:0; opacity:0; transform:translateY(10px);
     transition:opacity .5s ease, transform .5s ease; pointer-events:none;
+    display:flex; flex-direction:column; align-items:center;
   }
   .quote.active{opacity:1; transform:translateY(0); position:relative; pointer-events:auto;}
   .quote p{
     font-family:'Cormorant Garamond',serif; font-weight:340; font-style:italic;
-    font-size:clamp(1.35rem, 2.4vw, 1.9rem); line-height:1.42; max-width:34ch; margin:0 0 26px;
+    font-size:clamp(1.35rem, 2.4vw, 1.9rem); line-height:1.42; max-width:34ch; margin:0 auto 26px;
   }
   .quote cite{font-style:normal; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; opacity:0.7;}
-  .quote-dots{display:flex; gap:10px; margin-top:36px;}
+  .quote-dots{display:flex; gap:10px; margin-top:20px; justify-content:center;}
   .quote-dots button{
     width:8px; height:8px; border-radius:50%; border:1px solid var(--line-light);
     background:transparent; cursor:pointer; padding:0;
