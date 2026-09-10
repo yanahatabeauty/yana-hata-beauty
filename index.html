@@ -216,13 +216,15 @@
   .about{background:var(--cream);}
   .about-grid{display:grid; grid-template-columns:1fr; gap:48px;}
   @media(min-width:860px){
-    .about-grid{grid-template-columns:0.8fr 1.2fr; gap:72px; align-items:start;}
-    .about-portrait{position:sticky; top:100px;}
+    .about-grid{grid-template-columns:0.8fr 1.2fr; gap:72px;}
   }
   .about-portrait{
     aspect-ratio:3/4; border-radius:2px;
     background:linear-gradient(150deg, #d9c9ab 0%, var(--clay) 55%, var(--clay-deep) 100%);
     position:relative; overflow:hidden;
+  }
+  @media(min-width:860px){
+    .about-portrait{aspect-ratio:auto; height:100%; min-height:560px;}
   }
   .about-copy p{margin:0 0 20px; font-size:1.02rem; color:rgba(34,29,22,0.82); max-width:60ch;}
   .about-copy p:last-of-type{margin-bottom:0;}
@@ -451,13 +453,13 @@
       <div class="credentials-list">
         <span class="credentials-label">Training &amp; Credentials</span>
         <ul>
-          <li>Licensed Esthetician — Atelier Esthétique Institute of Esthetics, NYC (600-hour program)</li>
+          <li>Licensed Esthetician — Atelier Esthétique Institute of Esthetics, NYC (600-hour&nbsp;program)</li>
           <li>Advanced Facial Massage Certification</li>
           <li>Reiki Level II Certification</li>
           <li>NASM Certified Personal Trainer</li>
         </ul>
       </div>
-      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.15rem; color:var(--clay-deep);">Come as you are. We'll start there.</p>
+      <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500; font-size:1.6rem; color:var(--ink); margin-top:8px;">Come as you are. We'll start there.</p>
     </div>
   </div>
 </section>
